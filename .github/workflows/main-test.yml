@@ -12,9 +12,7 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https://10.105.198.134/bpa/api/v1.0/workflow/process-definition/cicd-gct-pipeline-workflow/start'
-        method: 'POST'
+        url: 'https://www.google.com/search?q=github'
+        method: 'GET'
         username: ${{ secrets.AWX_USER }}
         password: ${{ secrets.AWX_PASSWORD }}
-        customHeaders: '{"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjMWFhNTI5MC1iY2I5LTExZWQtYjdhZC1hZDhjZDY1NTg5MDEiLCJuYW0iOiJhZG1pbiIsImlzcyI6IlltRndZekUxWXpBeU1ERTRibTkyTWpodWN6QjNNSEptYkRCMyIsInJvbCI6IiIsImV4cCI6MTY4MTU2Mzk0MzAwMCwiZm5tIjoiYWRtaW4iLCJsbm0iOiJhZG1pbiIsImVtbCI6ImFkbWluQGJpemFwcHMuY2lzY28uY29tIiwic2lkIjoiMDlkNzA2NTAtZGI4YS0xMWVkLWJjYjEtZDk5ODAxNDhkYmQwIiwiYWRtIjp0cnVlLCJhZWkiOjMwLCJ0eXBlIjoiYWNjZXNzIiwiYXV0aC1tb2RlIjoibG9jYWwiLCJncm91cC1hdXRoIjpmYWxzZSwiaWF0IjoxNjgxNTYyMTQzfQ.RFg3HztLebk5XrSDSg_5yjUuB8a4L0R1Oqgh_sYZOAE"}'
-        data: '{"key_1": "value_1", "key_2": "value_2"}'
