@@ -3,7 +3,7 @@
     "controllerType": "NSO",
     "variables": [],
     "variableProperties": [],
-    "commands": "logging host 34.23.10.02",
+    "commands": "logging host 34.23.10.03",
     "_id": "63dced0081b69900260da929",
     "name": "GCT_Test_manual",
     "version": "1.0",
