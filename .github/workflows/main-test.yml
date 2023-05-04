@@ -1,3 +1,5 @@
+
+
 name: 'Call workflow when file is pushed'
 
 on:
@@ -12,7 +14,9 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https://www.google.com/search?q=github'
-        method: 'GET'
+        url: 'https://10.105.198.147:9201/api/v1.0/workflow/process-definition/cicd-gct-pipeline-workflow/start'
+        method: 'POST'
         username: ${{ secrets.AWX_USER }}
         password: ${{ secrets.AWX_PASSWORD }}
+        customHeaders: '{"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4NmNjZjI4MC1lMzg0LTExZWQtOWI4ZC01YjRkOGZjMDlkNWIiLCJuYW0iOiJhZG1pbiIsImlzcyI6IlltRndZekUxWXpBeU1ERTRibTkyTWpodWN6QjNNSEptYkRCMyIsInJvbCI6IiIsInJybCI6IkJQQSBTdXBlciBBZG1pbiIsImV4cCI6MTY4MzExMzM5NjAwMCwiZm5tIjoiYWRtaW4iLCJsbm0iOiJhZG1pbiIsImVtbCI6ImFkbWluQGJpemFwcHMuY2lzY28uY29tIiwic2lkIjoiYTQwNzQ2MjAtZTlhMS0xMWVkLTg4MjYtNDFmMzRjZTljNzA4IiwiYWRtIjp0cnVlLCJyZG0iOnRydWUsImFlaSI6MzAsInRudCI6IjBkNmE0NjkwLTYzZTYtMTFlZC05YTdmLTQ5OWYyOTNmMzQ2ZCIsInR5cGUiOiJhY2Nlc3MiLCJhdXRoLW1vZGUiOiJsb2NhbCIsImdyb3VwLWF1dGgiOmZhbHNlLCJpYXQiOjE2ODMxMTE1OTZ9.jawwWyNYuqqxd_VuqIjGMh1itgE-WYckIR1czRgocPo"}'
+        data: '{"businessKey": "cicd-gct-pipeline-workflow","variables": {"inputData": {"value": "{\r\n        \"pipeline_type\": \"GCT\",\r\n        \"pipelineId\": \"6447795dc151c20121546b34\",\r\n        \"pipeline_name\": \"project-gct-700\",\r\n        \"project_name\": \"pipeline-gct-700\",\r\n        \"tenantId\": \"0d6a4690-63e6-11ed-9a7f-499f293f346d\",\r\n        \"created_by\": \"admin\",\r\n        \"running_by\": \"admin\",\r\n        \"autoApprovalRequired\":false,\r\n        \"inputEnv\":\"Stage\"\r\n    }","type": "json"}}}'
